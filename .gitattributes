@@ -1,2 +1,1 @@
-*.js linguist-language=ES6
-*.js linguist-language=ES5
+*.js linguist-language=JavaScript
