@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const count = (list) => {
+
+      if (list.length === 0) {
+        return 0
+      }
+      /* const num = count(list.slice(1))
+      console.log('结果是', num)
+      return 1 + num */
+      return 1 + count(list.slice(1))
+    }
+    console.log('数组中的元素数是', count([0, 1, 2, 3, 4, 5, 6, 7]))  // 8
+
+  </script>
+</body>
+
+</html>

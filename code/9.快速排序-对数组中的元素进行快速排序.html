@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /* 使用递归的方法实现数组的快速排序 */
+    // 1.先找出递归的基线条件
+    // 2.找出递归条件，即设定数组中的一个值为基准值
+    // 3.找出比基准值小的元素，放进一个新的数组
+    // 4.找出比基准值大的元素放进一个=临时数组
+    // 5.将基准值、小的数组以及大的数组拼接成一个新的数组
+
+    // ES5
+    /*  function quickSortArray(arr) {
+       // 基线条件
+       if (arr.length < 2) {
+         return arr
+       }
+       // 递归条件
+       var referenceValue = arr[0]     // 基准值 
+       var lessArr = arr.slice(1).filter(function (value) {
+         return value <= referenceValue
+       })
+       var moreArr = arr.slice(1).filter(function (value) {
+         return value > referenceValue
+       })
+       // 将排序好的数组返回
+       return quickSortArray(lessArr).concat(referenceValue, quickSortArray(moreArr))
+     }
+     console.log('排序之后的数组是', quickSortArray([15, 7, 3, 2, 9, 5, 11, 10, 8])) */
+
+    // ES6
+    const quickSortArray = (arr) => {
+      if (arr.length < 2) {
+        return arr
+      }
+      const referenceValue = arr[0]
+      const lessArr = arr.slice(1).filter(value => value <= referenceValue)
+      const moreArr = arr.slice(1).filter(value => value > referenceValue)
+      return [...quickSortArray(lessArr), referenceValue, ...quickSortArray(moreArr)]
+    }
+    console.log('排序之后的数组是', quickSortArray([15, 7, 3, 2, 9, 5, 11, 10, 8]))
+  </script>
+</body>
+
+</html>
