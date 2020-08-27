@@ -1,2 +1,2 @@
-*.javascript linguist-language=java
-*.html linguist-language=java
+*.js linguist-language=ES6
+*.js linguist-language=ES5
